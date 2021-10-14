@@ -9,43 +9,34 @@
  * 
  *
  * **/
-#include<stdbool.h>
 
 int array[10] = {2,8,1,21,7,14,2,1,0,11};
 
-bool evenNumber(int n){
+int evenNumber(int n){
 	if ( n%2 == 0 ){
-		return true;
+		return 1;
 	}
-	return false;
+	return 0;
 }
 
-void adder(int *a, int count){
-	if ( count == 2 ) {
-		return;
-	} else {
-		count++;
-	}
+void adder(int *a){
 	int aux = a[0];
 	for ( int i = 0 ; i < 10 ; i++ ) {
 		if ( i == 9 ) {
-			if ( evenNumber(aux) ) {
+			if ( evenNumber(aux) != 0 ) {
 				a[i] = aux+a[i];
-				break;
 			}
 		} else {
-			if ( evenNumber(a[i+1]) ) {
+			if ( evenNumber(a[i+1]) != 0) {
 				a[i] = a[i]+a[i+1];
-				break;
 			}
 		}
 	}
-	adder(a, count);
 }
 
 
 int main () {
-	adder(array, 0);
+	adder(array);
 	return 0;
 }
 
