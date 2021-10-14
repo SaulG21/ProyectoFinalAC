@@ -9,7 +9,6 @@
  * 
  *
  * **/
-#include<stdio.h>
 #include<stdbool.h>
 
 int array[10] = {2,8,1,21,7,14,2,1,0,11};
@@ -47,9 +46,6 @@ void adder(int *a, int count){
 
 int main () {
 	adder(array, 0);
-	for ( int i = 0 ; i < 10 ; i++ ) {
-		printf("\n%d", array[i]);
-	}
 	return 0;
 }
 
